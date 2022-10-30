@@ -1,0 +1,658 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.great_perent_div_clock {
+    width: 100vw;
+    height: 100%;
+    background-color: #9BB7D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.clock {
+    width: 50vw;
+    height: 600px;
+    border-radius: 25px;
+    background-color: #283d52;
+    box-shadow: inset 0px 0px 25px #2a2a2a,
+        inset 0px 0px 25px #000000,
+        0px 0px 2px #000000,
+        0px 0px 2px #292929;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.clockfaceone {
+    width: 21vw;
+    height: 280px;
+    border-radius: 50%;
+    margin-top: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0px 0px 15px rgba(166, 255, 0, 100),
+        inset 0px 0px 5px rgba(166, 255, 0, 100),
+        0px 0px 0.5px rgba(166, 255, 0, 100);
+}
+
+.clockfaceone::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(166, 255, 0);
+    z-index: 1;
+}
+
+.clockfaceone .color {
+    color: rgb(166, 255, 0);
+    font-size: 1.7rem;
+    position: absolute;
+    text-align: center;
+    inset: 20px;
+    transform: rotate(calc(30deg * var(--i)));
+}
+
+.clockfaceone .color b {
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.perent {
+    display: flex;
+    align-items: flex-end;
+}
+
+.first {
+    position: absolute;
+    transform-origin: bottom;
+}
+
+.seconds {
+    width: 2.5px;
+    height: 140px;
+    background-color: #5aaaff;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.minutes {
+    width: 4px;
+    height: 100px;
+    background-color: wheat;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.hours {
+    width: 6px;
+    height: 80px;
+    background-color: rgb(0, 242, 255);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.soundbar {
+    width: 25px;
+    height: 150px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 120px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: inset 0px 0px 2px rgba(166, 255, 0, 10),
+        inset 0px 0px 8px rgba(166, 255, 0, 10),
+        0px 0px 1px rgba(166, 255, 0, 10);
+}
+
+.soundbar.start {
+    -webkit-transform-origin: 50% -40px;
+    -webkit-animation: oscillation 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes oscillation {
+    from {
+        -webkit-transform: rotate(-9deg);
+    }
+
+    to {
+        -webkit-transform: rotate(9deg);
+    }
+}
+
+.virtual_timer_div {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 225px;
+    left: 25px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virtual_timer {
+    text-align: center;
+    font-size: 1.5rem;
+    color: yellowgreen;
+    text-shadow: 2px 2px black;
+}
+
+.virtual_date_div {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 150px;
+    left: 25px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virtual_date {
+    text-align: center;
+    font-size: 1.5rem;
+    color: yellowgreen;
+    text-shadow: 2px 2px black;
+}
+
+.virtual_alarm_timer_div {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 225px;
+    right: 25px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virtual_alarm_timer {
+    width: 200px;
+    height: 40px;
+}
+
+#alam_timer_set {
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: yellowgreen;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    text-shadow: 2px 2px black;
+    background-color: #283d52;
+    padding-bottom: 5px;
+}
+
+#alam_timer_set::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: none;
+}
+
+.virtual_alarm_date_div {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 150px;
+    right: 25px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.virtual_alarm_date {
+    width: 200px;
+    height: 40px;
+}
+
+#alam_date_set {
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: yellowgreen;
+    box-shadow: inset 0px 0px 15px #000000,
+        inset 0px 0px 1px #000000,
+        0px 0px 1px #000000;
+    text-shadow: 2px 2px black;
+    background-color: #283d52;
+}
+
+#alam_date_set::placeholder {
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: none;
+}
+
+.save_alarm_div_and_set {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+}
+
+.clear_storagebtn {
+    width: 75px;
+    height: 35px;
+    padding: 0%;
+    border: none;
+    margin-right: 10px;
+    background-color: black;
+    color: yellowgreen;
+    border-radius: 7.5px;
+    box-shadow: inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        0px 0px 2.5px yellowgreen;
+}
+
+.save_alarm_btn {
+    width: 75px;
+    height: 35px;
+    padding: 0%;
+    border: none;
+    margin-left: 10px;
+    background-color: black;
+    color: yellowgreen;
+    border-radius: 7.5px;
+    box-shadow: inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        inset 0px 0px 5px yellowgreen,
+        0px 0px 2.5px yellowgreen;
+}
+
+.save_alarm_btn:hover {
+    width: 70px;
+    height: 30px;
+    color: black;
+    background-color: yellowgreen;
+    font-size: 0.65rem;
+    box-shadow: inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        0px 0px 2.5px black;
+}
+
+.clear_storagebtn:hover {
+    width: 70px;
+    height: 30px;
+    color: black;
+    background-color: yellowgreen;
+    font-size: 0.65rem;
+    box-shadow: inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        inset 0px 0px 5px black,
+        0px 0px 2.5px black;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width:340px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 88vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 340px) and (max-width: 375px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 80vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 72.5vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 510px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 95vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 59vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 511px) and (max-width: 600px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 90vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 50vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 75vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 37.5vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .great_perent_div_clock {
+        width: 100vw;
+        height: auto;
+    }
+
+    .container {
+        width: 100vw;
+        height: 800px;
+    }
+
+    .clock {
+        width: 50vw;
+        height: 800px;
+    }
+
+    .clockfaceone {
+        width: 27.5vw;
+    }
+
+    .soundbar {
+        bottom: 320px;
+    }
+
+    .virtual_timer_div {
+        bottom: 250px;
+        left: unset;
+    }
+
+    .virtual_date_div {
+        bottom: 200px;
+        left: unset;
+    }
+
+    .virtual_alarm_timer_div {
+        bottom: 150px;
+        right: unset;
+    }
+
+    .virtual_alarm_date_div {
+        bottom: 100px;
+        right: unset;
+    }
+}
